@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Page</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+  }
+
+  body {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      color: #fff;
+  }
+
+  .payment-container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      border-radius: 25px;
+      padding: 40px 30px;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+  }
+
+  .payment-container:hover {
+      transform: translateY(-5px);
+  }
+
+  h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  }
+
+  form {
+      display: flex;
+      flex-direction: column;
+  }
+
+  label {
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #fff;
+  }
+
+  input, select {
+      padding: 12px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      font-size: 16px;
+      outline: none;
+      transition: all 0.3s ease;
+  }
+
+  input:focus, select:focus {
+      border-color: #ffd700;
+      box-shadow: 0 0 8px rgba(255,215,0,0.6);
+  }
+
+  .payment-methods {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+  }
+
+  .payment-methods label {
+      flex: 1;
+      background: rgba(255,255,255,0.1);
+      padding: 12px;
+      border-radius: 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  .payment-methods input[type="radio"] {
+      display: none;
+  }
+
+  .payment-methods input[type="radio"]:checked + label {
+      background: #ffd700;
+      color: #333;
+      transform: scale(1.05);
+      font-weight: 700;
+  }
+
+  button {
+      padding: 15px;
+      border: none;
+      border-radius: 12px;
+      background: #ff6b81;
+      color: #fff;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  button:hover {
+      background: #ff4757;
+      transform: scale(1.05);
+  }
+
+  @media (max-width: 500px) {
+      h1 {
+          font-size: 2rem;
+      }
+      input, select {
+          font-size: 14px;
+      }
+  }
+</style>
+</head>
+<body>
+
+<div class="payment-container">
+    <h1>Payment Details</h1>
+    <form>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="John Doe" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="john@example.com" required>
+
+        <label for="card">Card Number</label>
+        <input type="text" id="card" placeholder="1234 5678 9012 3456" required>
+
+        <div style="display:flex; gap:10px;">
+            <div style="flex:1;">
+                <label for="expiry">Expiry</label>
+                <input type="text" id="expiry" placeholder="MM/YY" required>
+            </div>
+            <div style="flex:1;">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" placeholder="123" required>
+            </div>
+        </div>
+
+        <div class="payment-methods">
+            <input type="radio" id="paypal" name="method" checked>
+            <label for="paypal">PayPal</label>
+
+            <input type="radio" id="credit" name="method">
+            <label for="credit">Credit Card</label>
+        </div>
+
+        <button type="submit">Pay Now</button>
+    </form>
+</div>
+
+</body>
+</html>

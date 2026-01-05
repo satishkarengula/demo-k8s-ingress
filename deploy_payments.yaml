@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sk-payments
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sk-payments
+  template:
+    metadata:
+      labels:
+        app: sk-payments
+    spec:
+      containers:
+      - name: sk-payments
+        image: satishkarengula/nginx-payments:v1
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sk-payments-service
+spec:
+  type: ClusterIP
+  selector:
+    app: sk-payments
+  ports:
+  - port: 80
+    targetPort: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sk-payments-ingress
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/group.name: my-group
+spec:
+  ingressClassName: alb
+  rules:
+  - http:
+      paths:
+      - path: /payments.html
+        pathType: Prefix
+        backend:
+          service:
+            name: sk-payments-service
+            port:
+              number: 80

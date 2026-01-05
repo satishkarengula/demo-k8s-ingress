@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SK-DevOps Products</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+  }
+
+  body {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      min-height: 100vh;
+      padding: 50px 20px;
+      color: #fff;
+  }
+
+  h1 {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 3rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  }
+
+  .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+  }
+
+  .product-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      cursor: pointer;
+  }
+
+  .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+  }
+
+  .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+  }
+
+  .product-card:hover img {
+      transform: scale(1.05);
+  }
+
+  .product-info {
+      padding: 20px;
+      text-align: center;
+  }
+
+  .product-info h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #fff;
+  }
+
+  .product-info p {
+      font-size: 14px;
+      color: #e0e0e0;
+      margin-bottom: 15px;
+      line-height: 1.4;
+  }
+
+  .product-info .price {
+      font-weight: 700;
+      color: #ffd700;
+      font-size: 18px;
+      margin-bottom: 15px;
+  }
+
+  .product-info button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 10px;
+      background: #ff6b81;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  .product-info button:hover {
+      background: #ff4757;
+      transform: scale(1.05);
+  }
+
+  @media (max-width: 500px) {
+      h1 {
+          font-size: 2.2rem;
+      }
+  }
+</style>
+</head>
+<body>
+
+<h1>Our Products</h1>
+
+<div class="products">
+    <div class="product-card">
+        <img src="https://cdn.thewirecutter.com/wp-content/media/2023/07/bluetoothheadphones-2048px-0876.jpg?auto=webp&quality=75&width=1024?auto=format&fit=crop&w=400&q=80" alt="Headphones">
+        <div class="product-info">
+            <h2>Wireless Headphones</h2>
+            <p>Experience immersive sound and stylish design with these top-quality headphones.</p>
+            <div class="price">$129.99</div>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1637437757614-6491c8e915b5?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3BvcnQlMjBzaG9lc3xlbnwwfHwwfHx8MA%3D%3D?auto=format&fit=crop&w=400&q=80" alt="Sneakers">
+        <div class="product-info">
+            <h2>Sport Sneakers</h2>
+            <p>Comfortable, durable, and perfect for your daily workouts or casual outings.</p>
+            <div class="price">$89.99</div>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="https://cdn.thewirecutter.com/wp-content/media/2024/04/carryontravelbackpacks-2048px-0187.jpg?auto=webp&quality=75&width=1024?auto=format&fit=crop&w=400&q=80" alt="Backpack">
+        <div class="product-info">
+            <h2>Travel Backpack</h2>
+            <p>Spacious and stylish backpack for travel, work, or school.</p>
+            <div class="price">$74.99</div>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="https://cdn.mos.cms.futurecdn.net/qDiWC728ZbsZJuP34meocG-1200-80.jpg?auto=format&fit=crop&w=400&q=80" alt="Smartwatch">
+        <div class="product-info">
+            <h2>Smartwatch</h2>
+            <p>Stay connected and track your health with this sleek smartwatch.</p>
+            <div class="price">$199.99</div>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
